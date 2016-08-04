@@ -39,6 +39,7 @@ class ProfilController extends Controller
         $prenom = $request->request->get('nom');
         $sexe = $request->request->get('sexe');
         $ville = $request->request->get('ville');
+        $age = $request->request->get('age');
 
         $hidden = $request->request->get('hidden');
 
@@ -54,6 +55,14 @@ class ProfilController extends Controller
             if (!empty($ville)) {
                 $user->setVille($ville);
             }
+            if (!empty($age)) {
+                $user->setAge($age);
+            }
+
+            $request->getSession()
+            ->getFlashBag()
+            ->add('success', 'Profil Modifié avec succès !')
+            ;
 
             $em->persist($user);
             $em->flush();

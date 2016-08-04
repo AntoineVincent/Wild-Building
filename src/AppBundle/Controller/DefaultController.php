@@ -13,9 +13,25 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+         $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+
+        $user = $em->getRepository('AppBundle:User')->findOneById($user->getId());
+
+        $allUser = $em->getRepository('AppBundle:User')->findAll();
+        $tabScore = [];
+
+        foreach ($allUser as $oneUser) {
+
+            $tabScore[] = array(
+                'bestScore' => $oneUser->getBestScore(),
+                'username' => $oneUser->getUsername(),
+            );
+        }
+        
         return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
+            'user' => $user,
+            'tabScore' => $tabScore,
         ));
     }
 }

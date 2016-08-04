@@ -2,4 +2,42 @@
 
 {% block body %}
 
+	{% if user.sexe == null or user.ville == null or user.age == null or user.nom == null %}
+		<div class="col-md-12">
+			<div class="col-md-1"></div>
+			<div class="col-md-10 updateask-div">
+				<div class="col-md-12">
+					<p class="ask-text"> Bonjour {{ user.username }}, votre profil n'est pas encore complet, voulez vous le completer ?</p>
+				</div>
+				<div class="col-md-12">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<div class="col-md-3"></div>
+						<div class="col-md-6">
+							<a href="{{ path('profil_modif') }}" class="btn btn-danger">Remplir Profil</a>
+						<div class="col-md-3"></div>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	{% endif %}
+
+<div class="col-md-12">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+		<div class="col-md-4 updateask-div">
+			<h3 class="classment-title">Classement Général :</h3>
+			<ul>
+				{% for user in tabScore|sort|reverse %}
+					<li class="result"> {{ user.username }} : {{ user.bestScore }} </li>
+				{% endfor %}
+			</ul>
+			<p> Ton Meilleur Score : {{ user.bestScore }}</p>
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>
+
 {% endblock %}
