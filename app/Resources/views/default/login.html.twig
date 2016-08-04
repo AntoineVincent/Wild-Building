@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="col-md-1"></div>
+    <div class="col-md-10 main-div">
+        <h1 class="main-title"> Wild-Building </h1>
+
+        <div class="col-md-12 co-reg">
+            <div class="col-md-6 log-form">
+                <form action="{{ path("user_login_check") }}" method="post">
+                    <div class="col-md-12">
+                        <h3 class="ide-title">Connecte Toi !</h3>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <div class="col-md-4">
+                            <label class="inp-name">Pseudo</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <label class="inp-name">Password</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="password" id="password" name="_password" required="required" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-8">
+                            <input type="submit" class="btnlogin" id="_submit" name="_submit" value="Envoyer" />
+                        </div>
+                        <div class="col-md-8"></div>
+                    </div>
+                 </form>
+            </div>
+            <div class="col-md-6 reg-butn">
+                <h3 class="ide-title">Pas encore Inscrit ?</h3>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <a href="{{ path('user_register') }}" class="btn-reg btn btn-danger">S'inscrire</a>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+
+{% endblock %}
+

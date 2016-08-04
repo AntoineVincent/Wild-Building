@@ -5,10 +5,17 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <!-- CSS LINK -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+
+        <!-- JS LINK -->
         <script type="text/javascript" src="{{ asset('js/jquery.js') }}" ></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}" ></script>
+
+        <!-- FONT LINK -->
+        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     </head>
     <body>
         {% block body %}{% endblock %}

@@ -1,0 +1,55 @@
+body {
+	background: url('../img/city.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+/* ----- LOGIN PAGE ----- */
+.main-title {
+	text-align: center;
+	color: white;
+	font-family: 'Lobster';
+	font-size: 68px;
+	margin-bottom: 60px;
+}
+.main-div {
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 10px;
+	color: white;
+	margin-top: 100px;
+	padding: 50px;
+	font-family: Arial;
+ }
+.inp-name {
+	font-size: 22px;
+}
+.log-form {
+	border-right: solid white 2px;
+}
+.ide-title {
+	text-align: center;
+	font-family: 'Lobster';
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+input {
+	color: black !important;
+}
+
+/* ----- REGISTER PAGE ----- */
+.register-div {
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 10px;
+	color: white;
+	margin-top: 100px;
+	padding: 50px;
+	font-family: Arial;
+}
+.register-title {
+	font-family : 'Lobster';
+	text-align: center;
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+.appel {
+	font-size:22px;
+}
