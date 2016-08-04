@@ -3,6 +3,32 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+/* ----- NAVBAR ----- */
+.ico-nav {
+	height: 50px;
+	width: 50px;
+	float: left;
+}
+nav {
+	background-color: #ABB7B7 !important;
+	border: none !important;
+}
+.navbar-brand {
+	color: white !important;
+	font-size: 27px !important;
+	font-family: 'Lobster';
+}
+.nav-link {
+	color: white !important;
+	font-family: Arial !important;
+	font-size: 22px;
+}
+.nav-link:hover {
+	color: black !important;
+	background-color: white !important;
+}
+
 /* ----- LOGIN PAGE ----- */
 .main-title {
 	text-align: center;
@@ -52,4 +78,11 @@ input {
 }
 .appel {
 	font-size:22px;
+}
+
+/* ----- PROFIL PAGE ----- */
+.avatar {
+	height: 40%;
+	width: 40%;
+	border-radius: 100px;
 }
