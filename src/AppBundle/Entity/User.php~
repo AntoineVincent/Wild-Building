@@ -28,6 +28,13 @@ class User extends BaseUser
     /**
      * @var string
      *
+     * @ORM\Column(name="sexe", type="string", length=255, nullable=true)
+     */
+    public $sexe;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="ville", type="string", length=255, nullable=true)
      */
     public $ville;
@@ -71,5 +78,166 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     * @return User
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string 
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     * @return User
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string 
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set age
+     *
+     * @param integer $age
+     * @return User
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer 
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Set niveau
+     *
+     * @param integer $niveau
+     * @return User
+     */
+    public function setNiveau($niveau)
+    {
+        $this->niveau = $niveau;
+
+        return $this;
+    }
+
+    /**
+     * Get niveau
+     *
+     * @return integer 
+     */
+    public function getNiveau()
+    {
+        return $this->niveau;
+    }
+
+    /**
+     * Set exp
+     *
+     * @param integer $exp
+     * @return User
+     */
+    public function setExp($exp)
+    {
+        $this->exp = $exp;
+
+        return $this;
+    }
+
+    /**
+     * Get exp
+     *
+     * @return integer 
+     */
+    public function getExp()
+    {
+        return $this->exp;
+    }
+
+    /**
+     * Set requireExp
+     *
+     * @param integer $requireExp
+     * @return User
+     */
+    public function setRequireExp($requireExp)
+    {
+        $this->requireExp = $requireExp;
+
+        return $this;
+    }
+
+    /**
+     * Get requireExp
+     *
+     * @return integer 
+     */
+    public function getRequireExp()
+    {
+        return $this->requireExp;
+    }
+
+    /**
+     * Set bestScore
+     *
+     * @param integer $bestScore
+     * @return User
+     */
+    public function setBestScore($bestScore)
+    {
+        $this->bestScore = $bestScore;
+
+        return $this;
+    }
+
+    /**
+     * Get bestScore
+     *
+     * @return integer 
+     */
+    public function getBestScore()
+    {
+        return $this->bestScore;
     }
 }

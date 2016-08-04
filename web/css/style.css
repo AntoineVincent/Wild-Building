@@ -85,4 +85,84 @@ input {
 	height: 40%;
 	width: 40%;
 	border-radius: 100px;
+	margin-left:30%;
+}
+.username {
+	font-family: arial;
+	background: url(../img/ville-pann.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	color: black;
+	text-align: center;
+	padding: 20px;
+	text-decoration: bold;
+}
+.exp-barre {
+	background-color: white;
+	border-radius: 5px;
+	height: 25px;
+	width: 100%;
+	padding: 0 !important;
+	border: solid white 1px;
+	margin-bottom: 40px;
+}
+.exp {
+	text-align:center;
+	position: relative;
+	z-index: 50;
+}
+.level {
+	font-size: 24px;
+}
+#expNow {
+	background-color: #C0392B;
+	height: 100%;
+	border-radius: 5px;
+}
+.infos {
+	font-size: 22px;
+}
+.infos-title {
+	font-size: 30px;
+	text-align: center;
+	font-family: cursive;
+	text-decoration: underline;
+}
+.infos-div {
+	background-color: rgba(0,0,0,0.6);
+	padding: 10px;
+	border-radius: 5px;
+}
+.scorebest {
+	text-align: center;
+}
+.modif {
+	text-align: center;
+}
+/* ----- MODIF PROFIL PAGE ----- */
+.modif-title {
+	text-align: center;
+	font-family: 'Lobster';
+	font-size: 30px;
+	margin-bottom: 40px;
+}
+.modif-label {
+	text-align: center;
+}
+.label-name {
+	font-size: 16px;
+	font-family: cursive;
+}
+.modif-profil-div {
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 10px;
+	color: white;
+	margin-top: 100px;
+	font-family: Arial;
+}
+.btn-div-modifprofil {
+	margin-top: 30px;
+}
+.choice-gender {
+	color: black !important;
 }

@@ -3,11 +3,53 @@
 {% block body %}
 
 <div class="col-md-12 main-div">
-	<div class="col-md-4">
-		<img class="img-responsive avatar" src="{{ asset('img/try.jpg')}}" />
+	<div class="col-md-3">
+		{% if user.sexe == 'femme' %}
+			<img class="img-responsive avatar" src="{{ asset('img/try2.jpg')}}" />
+		{% elseif user.sexe == 'homme' %}
+			<img class="img-responsive avatar" src="{{ asset('img/try.jpg')}}" />
+		{% else %}
+			<img class="img-responsive avatar" src="{{ asset('img/nogender.jpg')}}" />
+		{% endif %}
+		<h2 class="username">{{ app.user.username }}</h2>
+		<a href="{{ path('profil_modif') }}" class="btn btn-danger modif">Modifier le profil</a>
 	</div>
-	<div class="col-md-6"></div>
-	<div class="col-md-2"></div>
+	<div class="col-md-6">
+		<div class="col-md-12">
+			<div class="col-md-12">
+				<p class="level"> Niveau {{ user.niveau }} : Marcheur de rue</p>
+			</div>
+			<div class="col-md-12 exp-barre">
+				<div id="expNow">
+				</div>
+				<p class="exp">{{ user.exp }} Xp / {{ user.requireExp }}</p>
+			</div>
+			<div class="col-md-12 infos-div">
+				<h3 class="infos-title">Informations Profil</h3>
+				<p class="infos">Prenom : {{ user.nom }}</p>
+				<p class="infos">Age : {{ user.age }} ans</p>
+				<p class="infos">Email : {{ user.email }}</p>
+				<p class="infos">Ville : {{ user.ville }}</p>
+				<p class="infos">Sexe : {{ user.sexe }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="col-md-12 infos-div">
+			<h3>Meilleur Score : </h3>
+			{% if user.bestScore != null %}
+				<p class="scorebest"> {{ user.bestScore }} <p>
+			{% else %}
+				<p>Aucun Score enregistré</p>
+			{% endif %}
+		</div>
+	</div>
 </div>
+
+<script>
+	$(document).ready(function() {
+		$('#expNow').css( "width", "{{ percent }}%" );
+	});
+</script>
 
 {% endblock %}

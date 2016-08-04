@@ -28,6 +28,13 @@ class User extends BaseUser
     /**
      * @var string
      *
+     * @ORM\Column(name="sexe", type="string", length=255, nullable=true)
+     */
+    public $sexe;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="ville", type="string", length=255, nullable=true)
      */
     public $ville;
@@ -232,5 +239,28 @@ class User extends BaseUser
     public function getBestScore()
     {
         return $this->bestScore;
+    }
+
+    /**
+     * Set sexe
+     *
+     * @param string $sexe
+     * @return User
+     */
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    /**
+     * Get sexe
+     *
+     * @return string 
+     */
+    public function getSexe()
+    {
+        return $this->sexe;
     }
 }

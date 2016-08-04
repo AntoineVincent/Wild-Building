@@ -24,3 +24,7 @@ dashboard:
 profil:
     path:    /profil
     defaults: { _controller: AppBundle:Profil:show }
+
+profil_modif:
+    path:     /profil/update
+    defaults: { _controller: AppBundle:Profil:modif } 
