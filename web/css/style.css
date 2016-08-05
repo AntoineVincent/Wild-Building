@@ -186,3 +186,22 @@ input {
 .result {
 	font-size: 17px;
 }
+
+/* ----- PLAY PAGE ----- */
+#map { 
+	height: 270px;
+	width: 600px; 
+	margin-top: 100px;
+}
+.instruction {
+	font-size: 20px;
+	font-family: cursive;
+}
+.lieuToFind {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+}
+.titl {
+	text-decoration: underline;
+}
