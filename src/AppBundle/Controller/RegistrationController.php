@@ -61,6 +61,7 @@ class RegistrationController extends Controller
             $user->setNiveau(0);
             $user->setExp(0);
             $user->setRequireExp(10);
+            $user->setBestScore(0);
 
             $userManager->updateUser($user);
 

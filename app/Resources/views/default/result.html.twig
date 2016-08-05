@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="col-md-12" id="pano">
+    <div class="col-md-6 container">
+        <div class="col-md-12" id="map"></div>
+    </div>
+    <div class="col-md-6 main-div">
+    	<div class="col-md-12">
+	    	<p class="instruction"> {{ reponse }}</p>
+            <hr>
+            <div class="score-div">
+                <p class="response"> Niveau {{ user.niveau }}</p>
+                <p class="response"> Exp : {{ user.exp }} / {{ user.requireExp }} : Vous avez gagné {{ gain }} XP</p>
+            </div>
+	    	<hr>
+	    </div>
+	    <div class="col-md-12">
+            <p class="name-response"> Il s'agissait de : {{ lieu.name }}
+	    	<img class="lieuToFind" src="{{ asset('uploads/lieux/' ~ lieu.file) }}"/>
+	    </div>
+    </div>
+</div> 
+
+<script>
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: {{ lieu.lattitude }}, lng: {{ lieu.longitude }}},
+        zoom: 5,
+        streetViewControl: false
+    });
+
+    var image = {
+        // Adresse de l'icône personnalisée
+        url: "{{ asset('img/marker.png') }}",
+        // Taille de l'icône personnalisée
+        size: new google.maps.Size(110, 90),
+        // Origine de l'image, souvent (0, 0)
+        anchor: new google.maps.Point(32,56)
+    };
+
+    var optionsMarqueur = {
+        position: map.getCenter(),
+        map: map,
+        icon: image
+    };
+    var marqueur = new google.maps.Marker(optionsMarqueur);
+
+    var optionsMarqueur2 = {
+        position: {lat: {{ lat }}, lng: {{ lng }}},
+        map: map
+    };
+    var marqueur2 = new google.maps.Marker(optionsMarqueur2);
+
+
+    var rsllat = {{ lieu.lattitude }};
+    var rsllng = {{ lieu.longitude }};
+    var latguess = {{ lat }};
+    var lngguess = {{ lng }};
+    var line = new google.maps.Polyline({
+    path: [
+        new google.maps.LatLng(rsllat, rsllng), 
+        new google.maps.LatLng(latguess,  lngguess)
+    ],
+    strokeColor: "#000000",
+    strokeOpacity: 1.0,
+    strokeWeight: 3,
+    map: map
+});
+
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfYrfqMe2VeidmvmaAbANk8oLvRAXMHmU&callback=initMap"
+    async defer></script>
+
+{% endblock %}

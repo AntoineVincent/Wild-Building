@@ -35,4 +35,8 @@ new_lieux:
 
 play:
     path:     /play
-    defaults: { _controller: GameBundle:Game:play } 
+    defaults: { _controller: GameBundle:Game:play }
+
+play_result:
+    path:     /play/result/{idmonu}
+    defaults: { _controller: GameBundle:Game:resultRound } 

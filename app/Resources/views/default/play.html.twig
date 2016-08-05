@@ -7,7 +7,7 @@
         <div class="col-md-12">
         	<div class="col-md-5"></div>
         	<div class="col-md-2">
-		        <form action="" method="post">
+		        <form action="{{ path('play_result', { 'idmonu': lieu.id }) }}" method="post">
 		            <input id="lng" type="hidden" name="lng" autocomplete="off">
 		            <input id="lat" type="hidden" name="lat" autocomplete="off">
 		            <input id="result" type="hidden" name="result" autocomplete="off">

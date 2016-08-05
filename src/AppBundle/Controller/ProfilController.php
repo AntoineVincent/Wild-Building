@@ -15,6 +15,34 @@ class ProfilController extends Controller
 
         $user = $em->getRepository('AppBundle:User')->findOneById($user->getId());
 
+        if ($user->getNiveau() == 0){
+            $rang = "Nouveau FindBuilder";
+        }
+        elseif($user->getNiveau() == 1) {
+            $rang = "Vadrouilleur du Quartier";
+        }
+        elseif($user->getNiveau() == 2) {
+            $rang = "Marcheur de Rue";
+        }
+        elseif($user->getNiveau() == 3) {
+            $rang = "Arpenteur des Villes";
+        }
+        elseif($user->getNiveau() == 4) {
+            $rang = "Petit Coureur";
+        }
+        elseif($user->getNiveau() == 5) {
+            $rang = "Explorateur de Metropole";
+        }
+        elseif($user->getNiveau() == 6) {
+            $rang = "Coureur de Pays";
+        }
+        elseif($user->getNiveau() == 7) {
+            $rang = "Explorateur de Continent";
+        }
+        else {
+            $rang = "Jules Vernes, le maitre du Monde";
+        }
+
         $exp = $user->getExp();
         $require = $user->getRequireExp();
 
@@ -23,6 +51,7 @@ class ProfilController extends Controller
         return $this->render('default/profil.html.twig', array(
             'user' => $user,
             'percent' => $percent,
+            'rang' => $rang,
         ));
     }
 
